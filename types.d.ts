@@ -18,7 +18,9 @@ type UnsubscribeFunction = () => void
 
 interface Window {
   electron: {
-    subscribeStatistics: (callback: (statistics: Statistics) => void) => void
+    subscribeStatistics: (
+      callback: (statistics: Statistics) => void
+    ) => UnsubscribeFunction
     getStaticData: () => Promise<StaticData>
   }
 }
